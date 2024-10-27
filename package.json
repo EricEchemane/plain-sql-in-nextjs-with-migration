@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "next": "15.0.1",
     "postgres": "^3.4.5",
     "react": "19.0.0-rc-69d4b800-20241021",

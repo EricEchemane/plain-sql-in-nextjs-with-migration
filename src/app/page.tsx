@@ -1,5 +1,6 @@
 import sql from '@/db/pg';
 import { User } from '@/interfaces/user.interfaces';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 
 export default async function Home() {
@@ -15,7 +16,15 @@ export default async function Home() {
       </div>
       <ul>
         {users.map((user) => (
-          <li key={user.id}>{user.email}</li>
+          <li
+            key={user.id}
+            className="flex items-baseline gap-4"
+          >
+            <div>{user.email}</div>
+            <div>
+              {dayjs(user.created_at).format('MMM. DD, YYYY - hh:mm A')}
+            </div>
+          </li>
         ))}
       </ul>
     </div>
